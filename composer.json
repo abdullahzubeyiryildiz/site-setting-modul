@@ -1,0 +1,32 @@
+{
+    "name": "abdullahzubeyiryildiz/setting-package",
+    "description": "Bu modul Default Setting Kurulumu.",
+    "keywords": ["laravel setting","setting package"],
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SettingModul\\" : "src",
+            "SettingModul\\Database\\Seeders\\": "database/seeders"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [{
+        "name": "Abdullah Zübeyir Yıldız",
+        "email": "pratikyazilimci@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4|^8.0",
+        "laravel/framework": "^7.0 | ^8.0 | ^9.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SettingModul\\Providers\\SettingModulServiceProvider"
+            ]
+        }
+    }
+}
