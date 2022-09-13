@@ -18,37 +18,62 @@ class SettingSeeder extends Seeder
             [
                 'title' => 'Başlık',
                 'key' => 'site_name',
-                'value' => 'Qrken'
+                'value' => 'Qrken',
+                'settings_type' => 'text'
             ],
             [
                 'title' => 'Slogan',
                 'key' => 'site_info',
-                'value' => 'Site Kısa Yazı'
+                'value' => 'Site Kısa Yazı',
+                'settings_type' => 'text'
             ],
             [
                 'title' => 'Site Description',
                 'key' => 'site_description',
-                'value' => 'Site Description'
+                'value' => 'Site Description',
+                'settings_type' => 'text'
             ],
             [
                 'title' => 'Site Keywords',
                 'key' => 'site_keywords',
-                'value' =>  env('APP_NAME').', keyword, keyword2'
+                'value' =>  env('APP_NAME').', keyword, keyword2',
+                'settings_type' => 'text'
             ],
             [
                 'title' => 'Site Url',
                 'key' => 'site_url',
-                'value' =>  env('APP_URL')
+                'value' =>  env('APP_URL'),
+                'settings_type' => 'text'
             ],
             [
                 'title' => 'E-Posta',
                 'key' => 'site_email',
-                'value' => "pratikyazilimci@gmail.com"
+                'value' => "pratikyazilimci@gmail.com",
+                'settings_type' => 'text'
             ],
             [
                 'title' => 'Yükleme Klasörü',
                 'key' => 'site_upload',
-                'value' => "img"
+                'value' => "img",
+                'settings_type' => 'text'
+            ],
+            [
+                'title' => 'Logo',
+                'key' => 'site_logo',
+                'value' => "img/logo.png",
+                'settings_type' => 'file'
+            ],
+            [
+                'title' => 'Logo',
+                'key' => 'site_dark_logo',
+                'value' => "img/logo.png",
+                'settings_type' => 'file'
+            ],
+            [
+                'title' => 'Logo',
+                'key' => 'site_fav_icon',
+                'value' => ["img/logo.png"],
+                'settings_type' => 'array'
             ],
         ];
 
