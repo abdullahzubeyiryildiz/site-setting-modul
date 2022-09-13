@@ -72,13 +72,13 @@ class SettingController extends Controller
     public function index()
     {
         $settings = Setting::all()->sortBy('settings_must');
-        return view('settingmodul::index', compact('settings'));
+        return view('settingmodul::setting.index', compact('settings'));
     }
 
     public function edit($id)
     {
         $settings=Setting::where('id',$id)->firstOrFail();
-        return view('panel.settings.edit',compact('settings','id'));
+        return view('settingmodul::setting.edit',compact('settings','id'));
     }
 
     public function update(Request $request,$id)
