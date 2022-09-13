@@ -3,7 +3,10 @@
 namespace SettingModul\Providers;
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
+
+use SettingModul\Database\Seeders\SettingSeeder;
 
 class SettingModulServiceProvider extends ServiceProvider
 {
@@ -16,8 +19,11 @@ class SettingModulServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
-        $this->app->register(SeedServiceProvider::class);
 
+        Artisan::call('db:seed', [
+            '--class' => SettingSeeder::class,
+            '--force' => true // <--- add this line
+        ]);
        /*
         $this->publishes([
 
