@@ -4,8 +4,6 @@ namespace SettingModul\Providers;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
-use SettingModul\Providers\SeedServiceProvider;
-
 
 class SettingModulServiceProvider extends ServiceProvider
 {
