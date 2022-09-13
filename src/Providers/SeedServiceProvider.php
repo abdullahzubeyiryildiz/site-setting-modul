@@ -1,7 +1,6 @@
 <?php
 
-namespace SettingModul\Providers;
-
+namespace Core\Providers;
 
 use Illuminate\Console\Events\CommandFinished;
 use Illuminate\Support\Facades\Artisan;
