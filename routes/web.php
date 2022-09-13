@@ -1,12 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use SettingModul\Controllers\SettingController;
 
 Route::group([
-    'prefix' => 'setting',
+    'prefix' => 'site/setting',
     'as' => 'setting.'
 ], function () {
-    Route::get('/', [\Digitalcake\SystemSetting\Controllers\HolidayController::class, 'index'])->name('index');
+    Route::get('/', [SettingController::class, 'index'])->name('index');
 
-    Route::post('/setting', [\pratikyazilimci\SystemSetting\Controllers\HolidayController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [SettingController::class, 'edit'])->name('edit');
+
+    Route::post('/{id}/update', [SettingController::class, 'update'])->name('update');
 });
