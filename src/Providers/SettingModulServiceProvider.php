@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class SettingModulServiceProvider extends ServiceProvider
 {
+
     /**
      * Bootstrap the application services.
      *
@@ -16,14 +17,16 @@ class SettingModulServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+        $this->app->register(SeedServiceProvider::class);
 
+       /*
         $this->publishes([
 
         ], 'settingmodul');
+        */
 
 
-
-          config()->set("site", \SettingModul\Models\Setting::pluck("value","key")->all());
+        //  config()->set("site", \SettingModul\Models\Setting::pluck("value","key")->all());
     }
 
     protected function configPath()
