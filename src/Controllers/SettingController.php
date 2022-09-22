@@ -71,7 +71,7 @@ class SettingController extends Controller
 
     public function index()
     {
-        $settings = Setting::all()->sortBy('settings_must');
+         $settings = Setting::all()->sortBy('settings_must');
         return view('settingmodul::index', compact('settings'));
     }
 
