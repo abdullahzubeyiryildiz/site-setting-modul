@@ -15,7 +15,7 @@
                             </div>
                         </div>
 
-                        @if($settings->settings_type=="file")
+                        @if($settings->setting_type=="file")
                             <div class="form-group">
                                 <label>{{__('Resim Seç')}}</label>
                                 <div class="row">
@@ -26,7 +26,7 @@
                             </div>
                         @endif
 
-                        @if($settings->settings_type=="array")
+                        @if($settings->setting_type=="array")
                         <div class="form-group">
                             <label>{{__('Resimleri Seç')}}</label>
                             <div class="row">
@@ -42,15 +42,15 @@
                             <div class="row">
                                 <div class="col-lg-12 m-b-10">
 
-                                    @if($settings->settings_type=="text")
+                                    @if($settings->setting_type=="text")
                                         <input class="form-control" type="text" name="settings_value" required  value="{{$settings->settings_value}}">
                                     @endif
 
-                                    @if($settings->settings_type=="textarea")
+                                    @if($settings->setting_type=="textarea")
                                         <textarea class="form-control" name="settings_value">{{$settings->settings_value}}</textarea>
                                     @endif
 
-                                    @if($settings->settings_type=="ckeditor")
+                                    @if($settings->setting_type=="ckeditor")
                                         <textarea class="form-control" id="editor1" name="settings_value">{{$settings->settings_value}}</textarea>
 
                                         <script>
@@ -68,18 +68,18 @@
 
                                     @endif
 
-                                    @if($settings->settings_type=="file")
+                                    @if($settings->setting_type=="file")
                                             <img width="100" src="{{$settings->settings_value}}" class="m-l-10" alt="">
                                     @endif
 
-                                    @if($settings->settings_type=="array")
+                                    @if($settings->setting_type=="array")
                                             @foreach ($settings->settings_value as $item)
                                             <img width="100" src="{{ $item }}" class="m-l-10" alt="">
                                             @endforeach
                                     @endif
 
 
-                                    @if($settings->settings_type=="checkbox")
+                                    @if($settings->setting_type=="checkbox")
                                     <label for="checboxid">{{$settings->settings_description}} {{$settings->settings_value}}
                                     <input id="checboxid" type="checkbox" value="{{$settings->settings_value}}" @if ($settings->settings_value == '1') checked @endif>
                                     </label>
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
 
-                            @if($settings->settings_type=="file")
+                            @if($settings->setting_type=="file")
                                 <input type="hidden" name="old_file" value="{{$settings->settings_value}}">
                             @endif
 

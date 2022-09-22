@@ -28,17 +28,17 @@
                     @foreach($settings as $setting)
                         <tr id="item-{{$setting->id}}">
                             <td>{{$setting->id}}</td>
-                            <td class="sortable">{{$setting['settings_description']}}</td>
+                            <td class="sortable">{{$setting->title}}</td>
                             <td>
-                                @if($setting['settings_type']=="file")
-                                    <img width="100" src="/img/{{$setting['settings_value']}}" alt="">
+                                @if($setting->setting_type=="file")
+                                    <img width="100" src="/img/{{$setting['value']}}" alt="">
                                 @else
-                                   {{ substr(strip_tags($setting->settings_value),0, 300)}} {{ strlen(strip_tags($setting->settings_value)) > 300 ? "..." : ""}}
+                                   {{ substr(strip_tags($setting->value),0, 300)}} {{ strlen(strip_tags($setting->value)) > 300 ? "..." : ""}}
                                 @endif
                             </td>
-                            <td>{{$setting->settings_key}}</td>
-                            <td>{{$setting->settings_type}}</td>
-                            <td width="5"><a href="{{route('settings.Edit',['id' => $setting->id])}}"><i class="las la-edit"></i></a></td>
+                            <td>{{$setting->key}}</td>
+                            <td>{{$setting->setting_type}}</td>
+                            <td width="5"><a href="{{route('setting.edit',['id' => $setting->id])}}"><i class="las la-edit"></i></a></td>
                             <td width="5">
                                 @if ($setting->settings_delete)
                                     <button href="javascript:void(0)"><i id="{{ $setting->id}}"  class="las la-trash-alt"></i></button>
