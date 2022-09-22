@@ -75,6 +75,12 @@ class SettingSeeder extends Seeder
                 'value' => ["img/logo.png"],
                 'settings_type' => 'array'
             ],
+            [
+                'title' => 'Site Version',
+                'key' => 'version',
+                'value' => '10',
+                'settings_type' => 'text'
+            ]
         ];
 
         foreach ($settings as $key => $setting) {

@@ -52,6 +52,20 @@
 
                                     @if($settings->settings_type=="ckeditor")
                                         <textarea class="form-control" id="editor1" name="settings_value">{{$settings->settings_value}}</textarea>
+
+                                        <script>
+                                                    ClassicEditor
+                                                    .create( document.querySelector( '#editor1' ), {
+                                                        licenseKey: '',
+                                                    } )
+                                                    .then( editor => {
+                                                        window.editor = editor;
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    });
+                                        </script>
+
                                     @endif
 
                                     @if($settings->settings_type=="file")
@@ -71,19 +85,7 @@
                                     </label>
                                     @endif
 
-                                        <script>
 
-                                                    ClassicEditor
-                                                    .create( document.querySelector( '#editor1' ), {
-                                                        licenseKey: '',
-                                                    } )
-                                                    .then( editor => {
-                                                        window.editor = editor;
-                                                    } )
-                                                    .catch( error => {
-                                                        console.error( error );
-                                                    });
-                                        </script>
 
                                 </div>
                             </div>

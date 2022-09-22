@@ -12,4 +12,7 @@ Route::group([
     Route::get('/{id}/edit', [SettingController::class, 'edit'])->name('edit');
 
     Route::post('/{id}/update', [SettingController::class, 'update'])->name('update');
+
+
+    Route::get('/cerez/clear', [SettingController::class, 'index'])->name('cerez.clear');
 });
