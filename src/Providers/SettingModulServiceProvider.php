@@ -3,9 +3,10 @@
 namespace SettingModul\Providers;
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\ServiceProvider;
 use SettingModul\Database\Seeders\SettingSeeder;
 
 class SettingModulServiceProvider extends ServiceProvider
@@ -20,12 +21,15 @@ class SettingModulServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
-       /*  Artisan::call('db:seed', [
-            '--class' => SettingSeeder::class,
-            '--force' => true // <--- add this line
-        ]);
+        if (Schema::hasTable('settings')) {
+            Artisan::call('db:seed', [
+                '--class' => SettingSeeder::class,
+                '--force' => true // <--- add this line
+            ]);
+        }
 
-       $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'settingmodul');
+
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'settingmodul');
         $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'settingmodul');
         $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
         $this->publishes([
@@ -33,7 +37,6 @@ class SettingModulServiceProvider extends ServiceProvider
             __DIR__ . '/../../resources/lang' => base_path('resources/lang/vendor/settingmodul'),
             $this->configPath() => config_path('setting-modul.php'),
         ], 'settingmodul');
-        */
 
 
         //  config()->set("site", \SettingModul\Models\Setting::pluck("value","key")->all());

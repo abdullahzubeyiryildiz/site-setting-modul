@@ -72,7 +72,7 @@ class SettingSeeder extends Seeder
             [
                 'title' => 'Logo',
                 'key' => 'site_fav_icon',
-                'value' => ["img/logo.png"],
+                'value' => ["img/logo.png","img/logo1.png"],
                 'setting_type' => 'array'
             ],
             [
